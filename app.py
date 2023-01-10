@@ -23,10 +23,11 @@ def login():
 #         return redirect(url_for('home'))
 #     else:
 #         return render_template('home.html', user=user)
+    return render_template("login.html")
 
 
-# @app.route('/register', methods=["GET", "POST"])
-# def register_page():
+@app.route('/register')
+def register():
 #     try:
 #         form = RegistrationForm(request.form)
 
@@ -58,7 +59,7 @@ def login():
 
 #                 return redirect(url_for('dashboard'))
 
-        return render_template("login.html")
+    return render_template("signup.html")
 
     # except Exception as e:
     #     return (str(e))
