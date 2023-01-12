@@ -1,14 +1,16 @@
-from flask import Flask
+from flask import Flask, request
 from flask.templating import render_template
-# from flask import Flask, render_template, flash, request, url_for, redirect, session
-# from passlib.hash import sha256_crypt
-# from MySQLdb import escape_string as thwart
-# import gc
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    if request.method == 'POST':
+        if request.form['order_online']:
+            render_template('login.html')
+        else:
+            request.method == 'GET'
     return render_template('home.html')
 
 @app.route('/login')
